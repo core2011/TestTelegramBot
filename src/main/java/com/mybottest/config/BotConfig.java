@@ -9,16 +9,19 @@ public class BotConfig {
     String botName;
     String token;
 
-
-
     public BotConfig() {
+        botName = getConfig("bot.name");
+        token = getConfig("bot.token");
+    }
+
+    public String getConfig(String configName){
         PropertiesConfiguration config = new PropertiesConfiguration();
         try {
             config.load("application.properties");
         } catch (ConfigurationException e) {
             e.printStackTrace();
         }
-        botName = config.getString("bot.name");
-        token = config.getString("bot.token");
+        return config.getString(configName);
     }
+
 }

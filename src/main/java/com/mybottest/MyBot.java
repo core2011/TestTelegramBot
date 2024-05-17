@@ -3,8 +3,6 @@ package com.mybottest;
 import com.mybottest.config.BotConfig;
 import com.mybottest.logic.BusinessLogic;
 import lombok.SneakyThrows;
-import org.json.JSONArray;
-import org.json.JSONObject;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
@@ -44,16 +42,9 @@ public class MyBot extends TelegramLongPollingBot {
 
 
             switch (messageText) {
-                case "/START":
-                    sendMessage(chatId, "HI " + update.getMessage().getChat().getFirstName());
-                    break;
-                case "ALL":
-                    sendMessage(chatId, businessLogic.getAllCurrencyModelList().toString());
-                    break;
-                default:
-                    sendMessage(chatId, businessLogic.getCurrencyModelByShortName(messageText).toString());
-
-
+                case "/START" -> sendMessage(chatId, "HI " + update.getMessage().getChat().getFirstName());
+                case "ALL" -> sendMessage(chatId, businessLogic.getAllCurrencyModelList().toString());
+                default -> sendMessage(chatId, businessLogic.getCurrencyModelByShortName(messageText).toString());
             }
 
         }

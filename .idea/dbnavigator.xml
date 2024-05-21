@@ -12,7 +12,7 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="84e088cc-37dd-453a-92dd-5ffc42e79a92">
-      <console name="h2:db" type="STANDARD" schema="" session="Main" />
+      <console name="My_bot_telegram" type="STANDARD" schema="" session="Main" />
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
